@@ -124,7 +124,7 @@ class _CounterPageState extends State<CounterPage> {
             const Align(
               alignment: Alignment.centerLeft, // Align text to the left
               child: Text(
-                "Choose Step Value :",
+                "Choose Step Value",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
