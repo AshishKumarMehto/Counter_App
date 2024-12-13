@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Counter App',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const CounterPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
