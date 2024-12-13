@@ -103,7 +103,7 @@ class _CounterPageState extends State<CounterPage> {
                         fontSize: 22,
                         fontWeight: FontWeight.bold),
                     decoration: const InputDecoration(
-                      hintText: "Enter Starting Number",
+                      hintText: "Enter Initial Value ",
                       border: OutlineInputBorder(
                         // Adding the border
                         borderSide: BorderSide(color: Colors.amber),
@@ -124,7 +124,7 @@ class _CounterPageState extends State<CounterPage> {
             const Align(
               alignment: Alignment.centerLeft, // Align text to the left
               child: Text(
-                "Select Increment/Decrement by :",
+                "Choose Step Value :",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),
