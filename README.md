@@ -1,2 +1,2 @@
-# counter_app
+# Counter_app
 
