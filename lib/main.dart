@@ -43,6 +43,12 @@ class _CounterPageState extends State<CounterPage> {
     });
   }
 
+  void multiply() {
+    setState(() {
+      current = current * currentValue.toInt();
+    });
+  }
+
   void reset() {
     setState(() {
       current = 0;
@@ -57,9 +63,7 @@ class _CounterPageState extends State<CounterPage> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-      
       backgroundColor: const Color.fromARGB(255, 165, 177, 239),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 165, 177, 239),
@@ -96,7 +100,9 @@ class _CounterPageState extends State<CounterPage> {
             const SizedBox(height: 75),
             Row(
               children: [
-                Expanded(
+                SizedBox(
+                  width: 300,
+                  height: 60,
                   child: TextField(
                     controller: buddy,
                     style: const TextStyle(
@@ -134,7 +140,7 @@ class _CounterPageState extends State<CounterPage> {
               value: currentValue,
               min: 1,
               max: 10,
-              divisions: 10,
+              divisions: 9,
               label: currentValue.round().toString(),
               onChanged: (value) {
                 setState(() {
@@ -146,26 +152,37 @@ class _CounterPageState extends State<CounterPage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ElevatedButton(
-                    onPressed: increase,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 101, 231, 15),
-                    ),
-                    child: const Text('Increment')),
+                  onPressed: increase,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 101, 231, 15),
+                  ),
+                  child: const Icon(Icons.add),
+                ),
                 ElevatedButton(
                   onPressed: decrease,
                   style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 243, 69, 10),
                       textStyle: const TextStyle(fontWeight: FontWeight.bold)),
-                  child: const Text('Decrement'),
+                  child: const Icon(Icons.remove),
                 ),
                 ElevatedButton(
-                    onPressed: reset,
+                    onPressed: multiply,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 239, 167, 22),
                     ),
-                    child: const Text('Reset')),
+                    child: const Icon(Icons.clear),)
               ],
+              
             ),
+            const SizedBox(height: 30),
+            ElevatedButton(
+              
+                onPressed: reset,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 243, 238, 78),
+                  minimumSize: const Size(170,50)
+                ),
+                child: const Text('Reset',style: TextStyle(fontSize: 20,),),)
           ],
         ),
       ),
